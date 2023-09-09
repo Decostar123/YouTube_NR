@@ -1,8 +1,13 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux' 
 const Sidebar = () => {
+  const isMenuOpen = useSelector( store => store.app.isMenuOpen)  ; 
+  // EARLY
+  if( isMenuOpen === false ){
+    return null 
+  }
   return (
-   <div className="p-5 shadow-lg w-40">
+   <div className="py-5 px-10 shadow-lg " style={{width:"12%"}}>
    <ul>
       <li>Homes</li>
       <li>Shorts</li>

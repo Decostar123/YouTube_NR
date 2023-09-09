@@ -4,9 +4,9 @@ import VideoContainer from './VideoContainer'
 
 const MainContainer = () => {
   return (
-    <div >
-        <ButtonList/>
-        <VideoContainer/>
+    <div style={{width:"88%"}}> 
+        <ButtonList />
+        <VideoContainer />
     </div>
   )
 }
