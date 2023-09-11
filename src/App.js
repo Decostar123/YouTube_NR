@@ -4,12 +4,24 @@ import Head from "./components/Header";
 import Body from "./components/Body" ;
 import {Provider} from 'react-redux' ; 
 import store from './utils/store';
+import MainContainer from './components/MainContainer'
 import { createBrowserRouter , RouterProvider , Outlet} from "react-router-dom" ; 
+import WatchPage from "./components/WatchPage"
 
-const path = createBrowserRouter([{
+const path = createBrowserRouter ( [ {
   path :"/" , 
-  element : <Body/> , 
-}]) 
+  element : <Body /> , 
+  children : [ 
+   {
+    path : "/" , 
+    element : <MainContainer/>
+   }
+   ,{
+    path : "/watch",
+    element : <WatchPage/>
+   }
+  ] 
+} ] ) 
 
 function App() {
 

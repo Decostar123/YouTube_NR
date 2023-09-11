@@ -1,4 +1,6 @@
 
+
+
 const VideoCard = ({info})=>{
     console.log( info ) ; 
     const {snippet, statistics } = info 
