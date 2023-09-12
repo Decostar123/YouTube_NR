@@ -16,4 +16,16 @@ const VideoCard = ({info})=>{
     </div>)
 }
 
+
+// HIGHER ORDER COMPONENT 
+// need it if i want to do some small modification , esample ideocard with a border 
+export const AdVideoCard  = (  {info})=>{
+    // whenever I call this functional componenet by doing < Componenent/> 
+    // the required paramter will be recieved in this funcion argyment 
+    //  see a component is basically a function at the end of day 
+    return   ( <div className="p-2 m-2 border-2 border-red-900">
+        <VideoCard info={info} />
+      </div>
+      )
+}
 export default VideoCard ; 

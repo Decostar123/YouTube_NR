@@ -1,17 +1,31 @@
-import React from 'react'
+import React , {useState, useEffect } from 'react'
 import "../App.css"
 import { useDispatch  } from 'react-redux' ; 
 import { toggleMenu } from '../utils/appSlice';
+
+import { YOUTUBE_SEARCH_API} from "../utils/constant"  ; 
 // import {toogleMenu} from "../utils/appSlice" ; 
 
 const Header = () => {
-    
+    const  [ query , setQuery ] = useState("")  ;    
     const dispatch = useDispatch() ; 
     const toogleMenuHandler = ()=>{
         dispatch( toggleMenu() ) ; 
     }
-
+    useEffect( ()=>{
+        console.log( " api call ") ; 
+        // MAKE AN API CALL AFTER EVERY KEY PRESS 
+        //  BUT IF THE DIFFERNCE BETWEEN 2 API CALLS < 200MS -> decline the api call 
+        // 
+        getSuggestions(); 
+    } , [query ] ) ; 
     
+    const getSuggestions = async()=>{
+        const data = await fetch(YOUTUBE_SEARCH_API + query ) ;
+        const json = await data.json() ; 
+        console.log( json ) ;  
+        
+    }
   return (
 
     <div className='flex justify-between p-2 m-2 shadow-lg '>
@@ -28,7 +42,9 @@ const Header = () => {
             
         </div>
         <div className="w-3/5 flex justify-center">
-            <input className="w-1/2 border-2 border-e-0 border-gray-400 rounded-l-full" type="text" />
+            <input className="p-4 w-1/2 border-2 border-e-0 border-gray-400 rounded-l-full" type="text" 
+               value={query} onChange = {(e)=> setQuery( e.target.value ) } 
+            />
             <button  className="border  border-gray-400 p-2 bg-gray-100 rounded-r-full" >🍳</button>
         </div>
         <div className="w-1/5">
