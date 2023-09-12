@@ -17,7 +17,9 @@ const Header = () => {
         // MAKE AN API CALL AFTER EVERY KEY PRESS 
         //  BUT IF THE DIFFERNCE BETWEEN 2 API CALLS < 200MS -> decline the api call 
         // 
-        getSuggestions(); 
+        setTimeout(()=>{    
+                getSuggestions() 
+            } ,   200 ) ;  
     } , [query ] ) ; 
     
     const getSuggestions = async()=>{
