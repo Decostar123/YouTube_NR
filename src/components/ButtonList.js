@@ -5,7 +5,7 @@ const ButtonList = () => {
   // buttonList IS BASICALLY COLLECTIONS OF BUTTONS AND FOR THAT FORST WE NEED TO MAKE 
   // BUTTOND COMPONENY AND A
   return (
-    <div className="flex  overflow-hidden w-50" >
+    <div className= "flex  overflow-hidden w-50  pl-2 " >
       <Button  name={"All"}/>
       <Button  name={"Mixes"} />
       <Button  name={"Computer Programming"}/>

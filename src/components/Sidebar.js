@@ -2,13 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux' 
 import {Link} from "react-router-dom"
 const Sidebar = () => {
-  const isMenuOpen = useSelector( store => store.app.isMenuOpen)  ; 
+  const isMenuOpen = useSelector( store => store.app.isMenuOpen )  ; 
   // EARLY
   if( isMenuOpen === false ){
     return null 
   }
+  console.log( isMenuOpen)
   return (
-   <div className="py-5 px-10 shadow-lg " style={{width:"12%"}}>
+   <div className="py-5 px-10 shadow-lg " style={ { width:"12%" }}>
    <ul>
       <li><Link to= "/" className="cursor-pointer">Homes</Link></li>
       <li>Shorts</li>
