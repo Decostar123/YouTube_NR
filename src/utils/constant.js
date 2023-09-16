@@ -7,5 +7,5 @@ export const YOUTUBE_VIDEOS_API =
 
 export const YOUTUBE_SEARCH_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
-
+export const PROFILE_URL = "https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" ; 
 

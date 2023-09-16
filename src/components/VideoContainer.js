@@ -6,7 +6,7 @@ import {openMenu} from "../utils/appSlice" ;
 import {useDispatch } from "react-redux" ; 
 import {Link} from "react-router-dom" ; 
 const VideoContainer = () => {
-  const dispatch = useDispatch() ; 
+  const dispatch = useDispatch( ) ; 
   const [videos, setVideos] = useState(null) ; 
   useEffect(()=>{
       dispatch(openMenu())
@@ -30,8 +30,8 @@ const VideoContainer = () => {
         {/* <AdVideoCard info={videos[0]} /> */}
         { videos.map( video =>{
          return ( <Link to = {"/watch?v=" + video.id  }>
-            <VideoCard info={video} key={video.id}  />
-          </Link>
+                    <VideoCard info={video} key={video.id}  />
+                  </Link >
          )
           
         }

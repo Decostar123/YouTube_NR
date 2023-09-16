@@ -3,12 +3,18 @@ import React , {useEffect} from 'react'
 import { closeMenu } from '../utils/appSlice';
 import {useDispatch} from "react-redux" ; 
 import {useSearchParams} from "react-router-dom"
+
+
+import CommentContainer from './CommentContainer';
 const WatchPage = () => {
   // const state = useSelector( state => state.app.isMenuOpen ) ; 
   const [searchParams, setSearchParams] = useSearchParams() ;
   
   console.log( searchParams.get("v") ) ; 
   const dispatch = useDispatch() ; 
+
+ 
+
   useEffect(()=>{
       dispatch( closeMenu( ))  
   } , [] )
@@ -23,6 +29,7 @@ const WatchPage = () => {
         allowFullScreen>
 
         </iframe>
+        <CommentContainer/>
 
 
 

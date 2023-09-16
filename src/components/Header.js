@@ -1,7 +1,9 @@
 import React , {useState, useEffect } from 'react'
 import "../App.css"
-import { useDispatch  } from 'react-redux' ; 
 import { toggleMenu } from '../utils/appSlice';
+
+import { cacheResult } from '../utils/searchSlice';
+import {useSelector, useDispatch} from "react-redux" ; 
 
 import { YOUTUBE_SEARCH_API} from "../utils/constant"  ; 
 // import {toogleMenu} from "../utils/appSlice" ; 
@@ -10,6 +12,7 @@ const Header = () => {
     const  [ query , setQuery ] = useState("")  ;    
     const [suggestions , setSuggestions ] = useState([]) ; 
     const [showSuggestions , setShowSuggestions ] = useState( false ) ; 
+    const cache = useSelector( state => state.cache ) ; 
     const dispatch = useDispatch() ; 
     const toogleMenuHandler = ()=>{
         dispatch( toggleMenu() ) ; 
@@ -19,21 +22,30 @@ const Header = () => {
         // MAKE AN API CALL AFTER EVERY KEY PRESS 
         //  BUT IF THE DIFFERNCE BETWEEN 2 API CALLS < 200MS -> decline the api call 
         // 
-        const timer = setTimeout(()=>{    
+        if( cache[query]){
+            setSuggestions( cache[query] ) ;
+             
+        }else{
+            const timer = setTimeout(()=>{    
                 getSuggestions() 
             } ,   200 ) ;  
 
-        return ()=>{
-            clearInterval(timer) ; 
+            return ()=>{
+                 clearInterval(timer) ; 
+            }
         }
+       
 
     } , [query ] ) ; 
     
     const getSuggestions = async()=>{
-        console.log("api call ") ; 
+        console.log("api call ", query ) ; 
+        
         const data = await fetch(YOUTUBE_SEARCH_API + query ) ;
         const json = await data.json() ;
         setSuggestions(json[1])
+        const res = {  [query] : json[1] } ;
+        dispatch( cacheResult(res) ) ;   
         console.log( json ) ;    
     }
   return (
