@@ -21,9 +21,9 @@ const MainContainer = () => {
   return (
     
     // <div style={{width:"88%"}}>.
-    <div> 
-        <ButtonList />
-        <VideoContainer />
+    <div className="MainContainer"> 
+        <ButtonList className="ButtonList"/>
+        <VideoContainer classame="VideoContainer"/>
     </div>
   )
 }

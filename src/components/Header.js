@@ -50,7 +50,7 @@ const Header = () => {
     }
   return (
 
-    <div className='flex justify-between p-2 shadow-lg w-[100%] fixed bg-white'  >
+    <div className='flex justify-between p-2 shadow-lg w-[100%] fixed bg-white headPart'  >
         <div className="flex w-1/5 cursor-pointer" >
             <img onClick={()=> toogleMenuHandler()}                
              className='w-12 h-10 '

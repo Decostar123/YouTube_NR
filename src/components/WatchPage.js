@@ -6,6 +6,7 @@ import {useSearchParams} from "react-router-dom"
 
 
 import CommentContainer from './CommentContainer';
+import LiveChat from './LiveChat';
 const WatchPage = () => {
   // const state = useSelector( state => state.app.isMenuOpen ) ; 
   const [searchParams, setSearchParams] = useSearchParams() ;
@@ -19,21 +20,29 @@ const WatchPage = () => {
       dispatch( closeMenu( ))  
   } , [] )
   return (
-    <div  className="px-5">
-        <iframe width="1200" 
+    <div className=" w-[100%] flex-col items-center  ">
+      <div  className="px-5 w-[100%] flex   ">
+     
+        <iframe width="75%" 
         height="600" 
         src={"https://www.youtube.com/embed/" + searchParams.get("v")  } 
         title="YouTube video player" 
         frameBorder="0"
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowFullScreen>
 
         </iframe>
-        <CommentContainer/>
+        <div className="w-[25%] h-[600px] m-0.5 border-2 border-black rounded-lg
+        overflow-y-scroll flex flex-col-reverse">
+          <LiveChat className="w-full" />
+        </div>
+     </div>
 
-
-
+     <div className="w-[75%] ">
+       <CommentContainer/>
+     </div>
     </div>
+   
   )
 }
 

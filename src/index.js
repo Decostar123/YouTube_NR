@@ -16,10 +16,10 @@ const path = createBrowserRouter([{
 
 }])  ;
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-    {/* <RouterProvider router={path} /> */}
-  </React.StrictMode>
+    // {/* <RouterProvider router={path} /> */}
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

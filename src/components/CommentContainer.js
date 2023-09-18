@@ -76,7 +76,7 @@ const commentData = [ {
 const Comment = ({data})=>{
 
         // {console.log( " the individual comment i sbeing called ") }
-        return <div className="flex shadow-sm p-2 mb-1 bg-gray-200">
+        return <div className="flex shadow-sm p-2 mb-1 bg-gray-200 rounded-lg">
           <img className="w-12 h-12  bg-black rounded-[100%]" src={PROFILE_URL}/>
           <div className="px-3" >
             <p className='font-bold'>name : {data.name}</p>

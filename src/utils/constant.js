@@ -9,3 +9,6 @@ export const YOUTUBE_SEARCH_API = "http://suggestqueries.google.com/complete/sea
 
 export const PROFILE_URL = "https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" ; 
 
+// https://youtube.googleapis.com/youtube/v3/search?part=apple&key=AIzaSyCivFbfJhLrlYejRLPJJh8qnqqtEaSpXkQ
+
+// https://www.googleapis.com/youtube/v3/search?part=snippet&q=applw&key=AIzaSyCivFbfJhLrlYejRLPJJh8qnqqtEaSpXkQ
