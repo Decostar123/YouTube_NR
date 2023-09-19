@@ -3,7 +3,7 @@ import { PROFILE_URL } from '../utils/constant'
 
 const ChatMessage = ({name , message }) => {
   return (
-    <div className="flex mb-2">
+    <div className="flex mb-0 mt-2 pb-0">
         <div className="w-1/6 h-8">
         <img className="w-8 h-8  bg-black rounded-[100%]" src={PROFILE_URL}/>
         </div>
