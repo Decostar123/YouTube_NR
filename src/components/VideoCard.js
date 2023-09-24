@@ -1,8 +1,8 @@
 import { useSelector} from "react-redux" ; 
+import { Link } from "react-router-dom";
 
-
-const VideoCard = ({info})=>{
-    const isMenuOpen = useSelector( state => state.app.isMenuOpen) ; 
+const VideoCard = ({info, videoID})=>{
+    const isMenuOpen = useSelector( state => state.app.isMenuOpen ) ; 
     console.log( isMenuOpen , "menu") ; 
     // console.log( info ) ;  
     const {snippet, statistics } = info 
@@ -12,14 +12,32 @@ const VideoCard = ({info})=>{
     const width = isMenuOpen ? "w-[19rem]":"w-[17rem]"
     // const width = "" ; 
         // const styles =  
-    return  ( <div className={ "p-2 m-2 shadow-lg "+ width  } >
-        <img className="rounded-lg" src={thumbnails.medium.url}  />
-        <ul>
-            <li className="font-bold py-2">{title}</li>
-            <li>{channelTitle}</li>
-            <li>Views: {statistics.viewCount}</li>
-        </ul>
-    </div>)
+        
+    return  ( 
+    
+       
+
+        <div className={ "p-2 m-2 shadow-lg w-80 grow "} >
+             
+
+             <Link to = {"/watch?v=" + videoID  } classsName="Link flex ">
+
+             <img className="rounded-lg mx-auto w-[100%]" src={thumbnails.medium.url}  />
+             <ul>
+                <li className="font-bold py-2">{title}</li>
+                <li>{channelTitle}</li>
+                <li>Views: {statistics.viewCount}</li>
+            </ul>
+
+             </Link>
+             
+
+           
+        
+        </div>
+
+        
+   )
 }
 
 

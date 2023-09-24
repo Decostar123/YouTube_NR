@@ -12,6 +12,7 @@ const path = createBrowserRouter([{
   children:[{
     path :"/", 
     element :< Body />
+    
   }]
 
 }])  ;

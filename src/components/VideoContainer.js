@@ -4,8 +4,9 @@ import {YOUTUBE_VIDEOS_API} from "../utils/constant"
 import VideoCard,{AdVideoCard} from './VideoCard';
 import {openMenu} from "../utils/appSlice" ; 
 import {useDispatch } from "react-redux" ;
+import { Link } from 'react-router-dom';
 // import LiveChat from './LiveChat'; 
-import {Link} from "react-router-dom" ; 
+// import {Link} from "react-router-dom" ; 
 const VideoContainer = () => {
   const dispatch = useDispatch( ) ; 
   const [videos, setVideos] = useState(null) ; 
@@ -26,13 +27,14 @@ const VideoContainer = () => {
   // const Ad = AdVideoCard() ; 
   return (
    
-        <div className="flex flex-wrap justify-between">
+        <div className="flex flex-wrap " >
         {/* MAKE IT WORK FOR ONE, THEN SCALE IT */}
         {/* <AdVideoCard info={videos[0]} /> */}
         { videos.map( video =>{
-         return ( <Link to = {"/watch?v=" + video.id  }>
-                    <VideoCard info={video} key={video.id}  />
-                  </Link >
+         return ( 
+         
+                    <VideoCard info={video} videoID = {video.id} key={video.id}  />
+                 
          )
           
         }
