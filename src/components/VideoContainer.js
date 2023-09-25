@@ -27,7 +27,9 @@ const VideoContainer = () => {
   // const Ad = AdVideoCard() ; 
   return (
    
-        <div className="flex flex-wrap " >
+        <div className="flex flex-wrap " style={window.innerWidth<=1280 ? { 
+           border : "4px solid red " , overflow :"hidden" , height:"100vh"
+        } :{}} >
         {/* MAKE IT WORK FOR ONE, THEN SCALE IT */}
         {/* <AdVideoCard info={videos[0]} /> */}
         { videos.map( video =>{

@@ -34,8 +34,13 @@ useEffect( ()=>{
   }
   console.log( isMenuOpen)
   return (
-   <div className="py-5 px-10 shadow-lg max-xl:bg-orange-500
-    max-xl:z-10  max-xl:absolute " style={ { width:"12%" }}>
+   <div className="outerSideBar max-xl:z-20 max-xl:absolute
+    max-xl:bg-black " style={ window.innerWidth <=1280? { width :"100%" , height:"130vh" , opacity:"0.9"  ,
+                                }:
+   { width:"12%" }} >
+    <div className="py-5 px-10 shadow-lg "
+    style={ window.innerWidth <=1280? {width:"40%" , opacity:"1" , zIndex:"10" , 
+    position:"absolute" , backgroundColor:"red"} :{} } >
    <ul>
       <li><Link to= "/" className="cursor-pointer">Homes</Link></li>
       <li>Shorts</li>
@@ -59,6 +64,7 @@ useEffect( ()=>{
       <li>Gaming</li>
       <li>Movies</li>
     </ul>
+   </div>
    </div>
   )
 }

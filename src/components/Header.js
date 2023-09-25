@@ -21,6 +21,7 @@ const Header = () => {
     const [showSuggestions , setShowSuggestions ] = useState( false ) ; 
     const cache = useSelector( state => state.cache ) ; 
     // let open = useSelector( state => state.app.isMenuOpen ) ; 
+    const isMenuOpen = useSelector( store => store.app.isMenuOpen) ; 
 
     const dispatch = useDispatch() ; 
     const toogleMenuHandler = ()=>{
@@ -71,7 +72,11 @@ const Header = () => {
        ' 
         >
         <div className="flex w-1/5 cursor-pointer " >
-            <img onClick={()=> toogleMenuHandler()}                
+            <img onClick={()=> {
+                toogleMenuHandler() ; 
+                console.log( " sidebaar git clicked ") ; 
+                console.log( "siderbar  ", isMenuOpen  ) ; 
+            }}                
              className='w-12 h-10 my-auto '
                  src="https://static.vecteezy.com/system/resources/previews/021/190/402/original/hamburger-menu-filled-icon-in-transparent-background-basic-app-and-web-ui-bold-line-icon-eps10-free-vector.jpg"
             />

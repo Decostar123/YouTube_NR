@@ -12,6 +12,7 @@ import Result from  "./components/Result" ;
 const path = createBrowserRouter ( [ {
   path :"/" , 
   element : <>
+  
       <Header />
       <Body /> 
   </> , 
