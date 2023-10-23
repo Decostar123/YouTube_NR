@@ -68,7 +68,7 @@ const Header = () => {
     }
   return (
 
-    <div className='flex justify-between p-2 shadow-lg w-[100%] fixed bg-white headPart
+    <div className='flex justify-between p-2 shadow-lg w-[100%] fixed z-10 bg-white headPart
        ' 
         >
         <div className="flex w-1/5 cursor-pointer " >
@@ -81,7 +81,7 @@ const Header = () => {
                  src="https://static.vecteezy.com/system/resources/previews/021/190/402/original/hamburger-menu-filled-icon-in-transparent-background-basic-app-and-web-ui-bold-line-icon-eps10-free-vector.jpg"
             />
             <a href="/">
-                <img className="w-35 h-12 mx-2"
+                <img className="w-[130px] h-[48px] mx-0.5"
                     src="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500"
                 />
             </a>
@@ -107,7 +107,7 @@ const Header = () => {
                  </button>
             </div>
 
-            { suggestions.length !== 0 && showSuggestions && <div className="mt-1 fixed left-[32.5rem] w-[27.75rem] bg-white border border-gray-400 rounded-lg
+            { suggestions.length !== 0 && showSuggestions && <div className="mt-1 fixed z-30 left-[32.5rem] w-[27.75rem] bg-white border border-gray-400 rounded-lg
                              shadow-lg" >
                 <ul onMouseOver={()=> {
                     console.log( "mouse is over ")

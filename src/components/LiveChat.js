@@ -19,7 +19,7 @@ const LiveChat = ()=>{
                 message : msg 
             })    ) ; 
         } ,  2000 ) ; 
-// NO NO, INEVERY 2 SECIND THE REQUEST IS BEING SENT TO THE BACKEND FOR THE DATA 
+// NO NO, IN EVERY 2 SECIND THE REQUEST IS BEING SENT TO THE BACKEND FOR THE DATA 
 // YES, THIS IS WHAT IT IS HAPPENING, YEP... THE OTHER CASE 
 // the problem is taht the situstion after 5 minutes,s o need to delete the content 
 // but how? simple modify the input to low size, how ? filter man common 

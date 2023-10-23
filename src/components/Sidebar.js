@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useSelector ,useDispatch  } from 'react-redux' 
 import {Link} from "react-router-dom"
 import {closeMenu , openMenu } from "../utils/appSlice"
+
 const Sidebar = () => {
   const dispatch = useDispatch() ; 
   const isMenuOpen = useSelector( store => store.app.isMenuOpen )  ; 
@@ -34,13 +35,12 @@ useEffect( ()=>{
   }
   console.log( isMenuOpen)
   return (
-   <div className="outerSideBar max-xl:z-20 max-xl:absolute
-    max-xl:bg-black " style={ window.innerWidth <=1280? { width :"100%" , height:"130vh" , opacity:"0.9"  ,
-                                }:
-   { width:"12%" }} >
-    <div className="py-5 px-10 shadow-lg "
-    style={ window.innerWidth <=1280? {width:"40%" , opacity:"1" , zIndex:"10" , 
-    position:"absolute" , backgroundColor:"red"} :{} } >
+  //  <div onClick={()=>{ dispatch( closeMenu())}} className="outerSideBar max-xl:z-1 max-xl:absolute
+  //   " style={ window.innerWidth <=1280? { width :"100%" , height:"1" , opacity:"1"  ,
+  //                            zIndex:"6" }:
+  //  { width:"12%" }} >
+    <div className="py-5 px-3 shadow-lg text-base max-md:text-sm max-sm:text-[0.5rem]" 
+    style={ window.innerWidth <=1280? {width:"18%" , backgroundColor:"white", zIndex:"6" } :{width:"18%", paddingLeft:"50px"} } >
    <ul>
       <li><Link to= "/" className="cursor-pointer">Homes</Link></li>
       <li>Shorts</li>
@@ -65,7 +65,7 @@ useEffect( ()=>{
       <li>Movies</li>
     </ul>
    </div>
-   </div>
+  //  </div>
   )
 }
 

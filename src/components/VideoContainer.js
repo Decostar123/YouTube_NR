@@ -3,12 +3,13 @@ import {useEffect , useState } from "react" ;
 import {YOUTUBE_VIDEOS_API} from "../utils/constant"
 import VideoCard,{AdVideoCard} from './VideoCard';
 import {openMenu} from "../utils/appSlice" ; 
-import {useDispatch } from "react-redux" ;
+import {useDispatch , useSelector } from "react-redux" ;
 import { Link } from 'react-router-dom';
 // import LiveChat from './LiveChat'; 
 // import {Link} from "react-router-dom" ; 
 const VideoContainer = () => {
   const dispatch = useDispatch( ) ; 
+  const isMenuOpen = useSelector( store => store.app.isMenuOpen ) ; 
   const [videos, setVideos] = useState(null) ; 
   useEffect(()=>{
       dispatch(openMenu())
@@ -27,8 +28,8 @@ const VideoContainer = () => {
   // const Ad = AdVideoCard() ; 
   return (
    
-        <div className="flex flex-wrap " style={window.innerWidth<=1280 ? { 
-           border : "4px solid red " , overflow :"hidden" , height:"100vh"
+        <div className="flex flex-wrap " style={window.innerWidth<=1280 && isMenuOpen ? { 
+           overflow :"hidden" , height:"100vh"
         } :{}} >
         {/* MAKE IT WORK FOR ONE, THEN SCALE IT */}
         {/* <AdVideoCard info={videos[0]} /> */}
